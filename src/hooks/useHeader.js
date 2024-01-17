@@ -7,7 +7,6 @@ const useHeader = () => {
     const {totalPrice} = useSelector(state => state.basket)
      const onChange = ((key, value ) => {
         dispatch(setSelectedFilter({key,value}))
-        console.log("checkedText",key, value);
       })
      
   return (

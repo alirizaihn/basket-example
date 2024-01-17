@@ -18,14 +18,14 @@ const FilterCard = (props) => {
   const onChangeValue = (key, value) => {
     onChange(key, value);
   };
-  const filterdOptions = useMemo(
+  const filteredOptions = useMemo(
     () =>
       searchText
         ? options.filter((option) =>
             option.value.toLowerCase().includes(searchText.toLocaleLowerCase())
           )
         : options,
-    [searchText]
+    [searchText,options]
   );
   return (
     <>
@@ -46,19 +46,26 @@ const FilterCard = (props) => {
             value={value}
             className="overflow-y-auto flex flex-col flex-wrap-none max-h-52 flex-nowrap"
           >
-            {filterdOptions?.map((option, key) => (
+            {filteredOptions?.map((option, key) => (
               <Radio key={key} value={option.value}>
                 {option?.label}
               </Radio>
             ))}
           </Radio.Group>
         ) : (
-          <Checkbox.Group
-            value={value}
-            options={filterdOptions}
-            onChange={(e) => onChangeValue(name, e)}
-            className="overflow-y-auto flex flex-col flex-wrap-none max-h-52 flex-nowrap"
-          />
+          <div className="overflow-y-auto flex flex-col flex-wrap-none max-h-52 flex-nowrap">
+            {filteredOptions?.map((option, key) => (
+              <Checkbox
+              key={key}
+              options={filteredOptions}
+              onChange={() => onChangeValue(name, option.value)}
+              checked={value.includes(option.value)}
+            >
+              {option.label}
+            </Checkbox>
+            
+            ))}
+          </div>
         )}
       </div>
     </>

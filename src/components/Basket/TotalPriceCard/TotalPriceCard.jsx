@@ -5,8 +5,9 @@ const TotalPriceCard = (props) => {
 const {totalPrice, checkoutBasket} = props;
   return (
     <div
-    className="shadow-md rounded-md p-2 flex flex-col"
+    className="shadow-md rounded-md p-2 flex flex-col justify-start flex flex-col text-left"
   >
+    <span className="text-sm tex-left text-gray-400">Check out</span>
       <div className='flex items-center'>
       <span className='text-sm text-center'>Total Prise:</span>
       <span className='text-lg text-blue-500  font-bold mx-1 '>{totalPrice}₺</span></div>

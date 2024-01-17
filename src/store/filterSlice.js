@@ -16,10 +16,20 @@ export const filterSlice = createSlice({
       state.selectedFilter = null;
     },
     setSelectedFilter: (state, { payload }) => {
-      state.selectedFilter = {
-        ...state.selectedFilter,
-        [payload.key]: payload.value,
-      };
+      if(['brand', 'model'].includes(payload.key )){
+        if (state.selectedFilter[payload.key].indexOf(payload.value) === -1 ) {
+         state.selectedFilter[payload.key].push (payload.value)
+        } else {
+          state.selectedFilter[payload.key] = state.selectedFilter[payload.key].filter(item => item !== payload.value)
+        }
+      }
+      else {
+        state.selectedFilter = {
+          ...state.selectedFilter,
+          [payload.key]: payload.value,
+        };
+      }
+     
     },
     setFilter: (state, { payload }) => {
       const uniqueBrands = [
