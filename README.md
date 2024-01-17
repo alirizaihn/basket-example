@@ -1,6 +1,7 @@
 # Shopping Page Project
-
 This project represents a shopping page where users can enjoy various features. Below are the details and usage steps related to the project.
+
+Project Link: https://ubiquitous-melomakarona-2494f3.netlify.app/ 
 ## Project Description
 The project symbolizes a platform where users can engage in shopping. Its functionality is as follows:
 
