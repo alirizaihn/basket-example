@@ -3,8 +3,6 @@ import { Flex, Pagination } from "antd";
 import { Content } from "antd/es/layout/layout";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import useProduct from "../../hooks/useProduct";
-import { addToBasket } from "../../store/basketSlice";
-import { useDispatch } from "react-redux";
 
 const ListView = () => {
   const { products, page, onChangePage, getProducts, addToCard } = useProduct();
