@@ -1,6 +1,6 @@
 import { Button } from 'antd'
 import React from 'react'
-
+import PropTypes from 'prop-types';
 const TotalPriceCard = (props) => {
 const {totalPrice, checkoutBasket} = props;
   return (
@@ -19,4 +19,8 @@ const {totalPrice, checkoutBasket} = props;
   )
 }
 
+TotalPriceCard.propTypes = {
+  totalPrice: PropTypes.string.isRequired,
+  checkoutBasket: PropTypes.func.isRequired,
+};
 export default TotalPriceCard

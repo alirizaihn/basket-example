@@ -1,6 +1,6 @@
 import { Button} from "antd";
 import React from "react";
-
+import PropTypes from 'prop-types';
 const BasketItem = (props) => {
   const { name, price, quantity, increase, decrease } = props;
   return (
@@ -33,5 +33,14 @@ const BasketItem = (props) => {
     </div>
   );
 };
+
+BasketItem.propTypes = {
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  quantity: PropTypes.number.isRequired,
+  increase: PropTypes.func.isRequired,
+  decrease: PropTypes.func.isRequired,
+};
+
 
 export default BasketItem;

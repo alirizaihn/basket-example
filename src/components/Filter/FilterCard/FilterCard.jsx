@@ -1,7 +1,7 @@
 import { Checkbox, Radio } from "antd";
 import Search from "antd/es/input/Search";
 import React, { useMemo, useState } from "react";
-
+import PropTypes from 'prop-types';
 const FilterCard = (props) => {
   const {
     title,
@@ -70,6 +70,26 @@ const FilterCard = (props) => {
       </div>
     </>
   );
+};
+FilterCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(["radio", "checkbox"]).isRequired,
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.any.isRequired,
+      label: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  hasSearch: PropTypes.bool,
+  key: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.bool,
+    PropTypes.array,
+  ]).isRequired,
 };
 
 export default React.memo(FilterCard);

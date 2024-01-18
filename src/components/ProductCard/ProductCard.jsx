@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link} from 'react-router-dom';
 import { Button } from 'antd';
+import PropTypes from 'prop-types';
 
 const ProductCard = (props) => {
 const {data, addToCard} = props;
@@ -23,5 +24,13 @@ const {image,price, name, id} = data;
     </div>
   )
 }
-
+ProductCard.propTypes = {
+  data: PropTypes.shape({
+    image: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+  }).isRequired,
+  addToCard: PropTypes.func.isRequired,
+};
 export default ProductCard

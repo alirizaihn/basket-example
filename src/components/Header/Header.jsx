@@ -4,7 +4,7 @@ import React from "react";
 import Search from "antd/es/input/Search";
 import { Link } from "react-router-dom";
 import useHeader from "../../hooks/useHeader";
-
+import PropTypes from 'prop-types'
 const Header = () => {
   const { onChange, totalPrice } = useHeader();
 
@@ -35,5 +35,10 @@ const Header = () => {
     </div>
   );
 };
+
+Header.propTypes = {
+totalPrice:PropTypes.number.isRequired,
+onChange:PropTypes.func.isRequired
+}
 
 export default Header;
