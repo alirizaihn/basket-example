@@ -1,6 +1,25 @@
-# Getting Started with Create React App
+# Shopping Page Project
+This project represents a shopping page where users can enjoy various features. Below are the details and usage steps related to the project.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project Link: https://ubiquitous-melomakarona-2494f3.netlify.app/ 
+## Project Description
+The project symbolizes a platform where users can engage in shopping. Its functionality is as follows:
+
+### Listing Products:
+Users can list products on the page by fetching them from [this address](https://5fc9346b2af77700165ae514.mockapi.io/products).
+
+### Filtering Options:
+With the filtering options on the page, users can perform search, sorting, and brand/model-based filtering according to their preferences.
+
+### Adding Products to the Cart:
+Users can add products to their carts through buttons on each product card.
+The products in the cart are stored using localStorage.
+
+### Product Detail Page:
+By clicking on product cards, users can access the product's detail page. On the detail page, they can find additional information and perform the action of adding the product to the cart.
+
+## Technologies Used
+This project is developed using React library, Create React App tool, Ant Desing component library, Redux-Toolkit, Jest.js, Tailwindcss.
 
 ## Available Scripts
 
